@@ -1,0 +1,138 @@
+The create table and the insert table statement for the respective entities is listed 
+below :-
+
+ EMPLOYEE:-
+   
+ Create table:- 
+      CREATE TABLE Employee ( 
+      Emp_id INT PRIMARY KEY, 
+      FName VARCHAR(255), 
+      MidName VARCHAR(255), 
+      LName VARCHAR(255), 
+      B_date DATE, 
+      Designation VARCHAR(255), 
+      Address VARCHAR(255), 
+      Salary DECIMAL(10, 2), 
+      Phone_no VARCHAR(15) 
+      );
+
+Insert table- 
+
+insert into Employee values(2059211,'Manjunath','D','Jain','10 NOV 1957','Assistant Director','Shimoga',56000.00,123456789);		 
+insert into Employee values(2059212,'Rajappa','S','Patil','25 DEC 1989','Food Inspector','Chennagiri',32000.00,234567891);		
+insert into Employee values(2059213,'Ravi','Shankar','Achar','01 JAN 1990','Gadgeted officer','Shimoga',45000.00,678912345); 		
+insert into Employee values(2059214,'R','Asha','-','03 MAR 1999','First Div.Asst','Shikaripura',30000.00,345678921); 											
+insert into Employee values(2059215,'Ranganath','M','','15 DEC 1991','Second Div.Asst','Bhadravathi',25000.00,567894312); 
+
+insert into Employee values(2059216,'Ashwini','G','Pai','14 AUG 1947','Typist','Balehonnur',20000.00,456789123);
+
+insert into Employee values(2059217,'Ramesh','H','K','24 FEB 2000','D group','Shimoga',15000.00,789789123); 
+
+ CUSTOMER:- 
+
+     Create table:- 
+     CREATE TABLE Customer ( 
+     Ration_card_no INT PRIMARY KEY, 
+     FName VARCHAR(255), 
+     MidName VARCHAR(255), 
+     LName VARCHAR(255), 
+     Poverty_Line VARCHAR(255), 
+     Address VARCHAR(255), 
+     Phone_no VARCHAR(15) 
+     );
+
+  Insert table:- 
+insert into Customer values(2405001231,'Ramesh','S','Gowda','AAY','Hosmane, Shimoga',123456789); 
+
+insert into Customer values(2405001232,'Mukhesh','C','Chetty','BPL','Vidhyanagara, Shimoga',234567891); 
+
+insert into Customer values(2405001233,'Lokhesh','P','Reddy','BPL','Kashipura, Shimoga',567891234);
+ 
+insert into Customer values(2405001234,'Prakash','M','Naik','APL','Ashoknagara, Shimoga',789132456); 
+
+insert into Customer values(2405001235,'Ranganna','J','Patel','AAY','Gopala, Shimoga',456789321); 
+
+insert into Customer values(2405001236,'Suresh','A','','BPL','Gandhinagara, Shimoga',987654321); 
+
+insert into Customer values(2405001237,'Veluswamy','S','-','APL','Tippunagar, Shimoga',763256789);
+
+
+  PRODUCT:- 
+
+     Create table:- 
+     CREATE TABLE Product ( 
+     Productno INT PRIMARY KEY, 
+     Product_Name VARCHAR(255), 
+     Stock_Quantity_in_quintal DECIMAL(10, 2), 
+     Emp_id INT, 
+     Supplier_id VARCHAR(255), 
+     FOREIGN KEY (Emp_id) REFERENCES Employee(Emp_id), 
+     FOREIGN KEY (Supplier_id) REFERENCEs             
+     Supplier(Supplier_id) 
+     );
+
+  Insert table:- 
+insert into Product values(01,'Rice',662,2059212,'16363IRA'); 
+
+insert into Product values(02,'Wheat',786,2059213,'16365IRA'); 
+
+insert into Product values(03,'Ragi',857,2059216,'16369IRA');
+ 
+insert into Product values(04,'Sugar',574,2059215,'16367IRA');
+
+
+  SUPPLIER:- 
+
+  Create table:- 
+
+     CREATE TABLE Supplier ( 
+     SLNO INT, 
+     Supplier_id VARCHAR(255) PRIMARY KEY, 
+     FName VARCHAR(255), 
+     MidName VARCHAR(255), 
+     LName VARCHAR(255),
+     Product_name VARCHAR(255), 
+     Ration_shop_in_smg VARCHAR(255) 
+     );
+
+  
+  Insert table:- 
+
+insert into Supplier values(01,'16363IRA','Mahesh','C','L','Rice','Vinnobnagara'); 
+
+insert into Supplier values(02,'16364IRA','H','L','Raghunath','Wheat','Krushinagara');
+ 
+insert into Supplier values(03,'16365IRA','K','C','Devraj','Ragi','Hosmane'); 
+
+insert into Supplier values(04,'16366IRA','A','S','Hiriyana','Rice','Vidhyanagara'); 
+
+insert into Supplier values(05,'16367IRA','Prasad','C','Shetty','Sugar','Ashoka Nagara'); 
+
+insert into Supplier values(06,'16369IRA','Marrapa','M','C','Rice','Hosmane');
+
+  
+   INVENTORY:- 
+      Create table:- 
+    
+        CREATE TABLE Supplier ( 
+        SLNO INT, 
+        Supplier_id VARCHAR(255) PRIMARY KEY, 
+        FName VARCHAR(255), 
+        MidName VARCHAR(255), 
+        LName VARCHAR(255), 
+        Product_name VARCHAR(255), 
+        Ration_shop_in_smg VARCHAR(255) 
+        );
+
+     Insert table:- 
+
+insert into Inventory values(20249701,'Rice','Available','Shimoga',989900345);
+
+insert into Inventory values(20249702,'Wheatt','Available','Sagara',789920345); 
+
+insert into Inventory values(20249703,'Ragi','Not AVailable','Shimoga',989234345);
+ 
+insert into Inventory values(20249704,'Sugar','Available','Bhadravathi',900345999); 
+
+    
+

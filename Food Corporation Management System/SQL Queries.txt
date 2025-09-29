@@ -1,0 +1,62 @@
+QUERIES:- 
+
+1) Query to retrieve all employees with a salary greater than 30,000 
+Code:- 
+SELECT * FROM Employee 
+WHERE Salary > 30000;
+
+2)Query to get the list of suppliers who supply 8Rice9 
+Code:- 
+SELECT * FROM Supplier 
+WHERE Product_name = 'Rice'; 
+
+3)Query to find the total stock quantity of all products 
+Code:- 
+SELECT SUM(Stock_Quantity_in_quintal) AS Total_Stock 
+FROM Product;
+
+4)Query to retrieve all customers living in 8Shimoga9 
+Code:- 
+SELECT * FROM Customer 
+WHERE Address LIKE '%Shimoga%';
+
+
+5)Query to list all products supplied by the supplied by the supplier with id 816367
+IRA9 
+Code:- 
+SELECT * FROM Product 
+WHERE Supplier_id = '16367-IRA';
+
+
+6)Query to find employees who have 8Assistant Director9 as their designation 
+Code:- 
+SELECT * FROM Employee 
+WHERE Designation = 'Assistant Director';
+
+7)Query to get the product details for 8Wheat9 
+Code:- 
+SELECT * FROM Product 
+WHERE Product_Name = 'Wheat';
+
+8)Query to get the address and phone number of suppliers for 8Sugar9 
+Code:- 
+SELECT Supplier.FName, Supplier.LName, 
+Supplier.Ration_shop_in_smg, Inventory.Phone_no 
+FROM Supplier 
+JOIN Product ON Supplier.Supplier_id = Product.Supplier_id 
+JOIN Inventory ON Product.Product_Name = 
+Inventory.Product_name 
+WHERE Product.Product_Name = 'Sugar';
+
+9)Query to list all employees born in 1990 
+Code:- 
+SELECT * FROM Employee 
+WHERE YEAR(B_date) = 1990;
+
+10)Query to get the Inventory status of 8Ragi9 
+Code:- 
+SELECT * FROM Inventory 
+WHERE Product_name = 'Ragi'; 
+
+
+

@@ -1,0 +1,21 @@
+TRIGGERS:- 
+1) 
+CREATE TABLE InventoryLog ( 
+Log_ID INT AUTO_INCREMENT PRIMARY KEY, 
+Inventory_ID INT, 
+Old_Stock_Status VARCHAR(255), 
+New_Stock_Status VARCHAR(255), 
+Change_Timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP 
+);
+
+2)
+CREATE TRIGGER LogInventoryChange 
+AFTER UPDATE ON Inventory 
+FOR EACH ROW 
+BEGIN 
+INSERT INTO InventoryLog (Inventory_ID, 
+Old_Stock_Status, New_Stock_Status) 
+VALUES (OLD.Inventory_ID, OLD.Stock_status, 
+NEW.Stock_status); 
+END; 
+
